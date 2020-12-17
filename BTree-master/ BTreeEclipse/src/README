@@ -1,0 +1,99 @@
+****************
+* Project 4 : BTree
+* CS321
+* 12/8/18
+* Cayson Wilkins, Subarna Joshi, Nealon Hager, Kira Davis
+**************** 
+
+OVERVIEW:
+
+ This project creates a BTree out of information given as a file in DNA sequence formatting. 
+ The program will then print out the BTree created in a binary file format. This can be used 
+ to organize and store this information and to find out how many duplicate DNA sequences there are.
+
+
+INCLUDED FILES:
+
+ * BTree.xml - UML Diagram for the project.
+ * Test.txt - our test plan.
+ * BTree.java - Main BTree class.
+ * BTreeNode.java - the node used in the BTree class.
+ * TreeObject.java - A single Object used in BTreeNode.
+ * GeneBankCreateBTree.java - Creates a BTree from a given gene bank file.
+ * GeneBAnkSearch.java - Searches in the specified BTree for sequences of given length.
+ * BTreeNodeTest.java - Test File for BTreeNode.
+ * BTreeTest.java - Test for BTree Class.
+ * GeneBankCreateBTreeTest.java - Tests GeneBankCreateBTree.java
+ * Cache.java - cache class used when asked to on the command line.
+ * DLLNode.java - used for the Cache class.
+ * ICache.java - Interface for the Cache Class.
+ * README - this file
+
+
+COMPILING AND RUNNING:
+
+ From the directory including all of these files, you will compile them all with the 
+ command below.
+ 
+ $ javac *.java
+
+ You can then run the GeneBankCreateBTree file to which uses all of the other files except
+ the test files to schedule the Processes using a Priority Queue
+ 
+ $ java GeneBankCreateBTree [0 | 1(no/with Cache)] [degree] [gbk file] [sequence length] [ | cache size] [ | debug level]
+
+ You can also run the GeneBankSearch using the following command below.
+
+ $ java GeneBankSearch [0 | 1(no/with Cache)] [btree file] [query file] [ | cache size] [ | debug level]
+
+ Console output will give the results after the program finishes.
+
+
+PROGRAM DESIGN AND IMPORTANT CONCEPTS:
+
+ The main purpose of the program is to organize DNA input values in a BTree format. It does this through
+all of the different files above working together to translate DNA sequences into a binary format to save
+space. The begins by running the GeneBankCreateBTree.java class using the console commands and input listed
+in the above compiling and running section of this README. This class then works with all of the BTree related
+classes to create the tree containing the binary translation of the data in the GBK file. The Cache part of this
+project are only used if the user specifies for the first argument when running the GeneBankCreateBTree command
+in the console. The main responsibility of the GeneBankSearch file is to searches in the specified BTree for 
+sequences of given length. The GeneBankCreateBTree creates the BTree itself and prints it out in the binary file. The BTree.java class is used to take in the input values from GeneBankCreateBTree and actually make it into the BTree organization. The TreeNode.java class is used in the creation of a BTreeNode, and the BTreeNode is used in the creation 
+of the BTree. We chose to do it this was to keep everything organized and was necessary for the creation of a working 
+BTree. The Cache files work together create a cache to store the recent information used. This is coming form our 
+first project for this class. The test classes test the file used in the test class name. The explanation on these 
+classes are in the Test.txt file included.
+
+TESTING:
+
+For the testing process for this project, we created test files that would test each of our main BTree
+Classes which were the BTree.java file, the BTreeNode.java file, and GeneBankCreateBTree.java.
+tested for just about every scenario That we could think of. We would use these tests to find out where issues
+were, then debug and fix the issue that was showing up in the test files. This was how we tested to see 
+if the BTree would work. We tested our GeneBankSearch.java file through running and checking if the output
+was what We were anticipating. The command line input files should be able to take in incorrect values and throw
+Exceptions for it. The known remaining issues in our program include: dump file duplicates. 
+The dump file repeats some values that it shouldn't but for the most part works. 
+
+
+DISCUSSION:
+ 
+This final BTree project took some time for the 4 of us to complete. There were many issues that occurred 
+throughout the creation of this project. Most of these were fixed after discovering them. We created our 
+UML diagram early and had to make changes to it throughout the project for we discovered some new methods 
+that we needed along with some methods that we did not need at all. The beginning of the creation of the 
+main BTree classes started out quick until we got the main BTree.java file. Once getting to a few methods 
+like the Insert(), Delete(), Search(), and Split() methods we would struggle with figuring how to make 
+them work correctly. These methods were some of the more confusing ones of the project where we ran into 
+many issues when creating them. We would test them with the test classes being created as we are working 
+on them and find many issues, then fix them, then repeat until there weren't any issues. Most of the 
+issues that we encountered we had to run through the scenario and find out where it was giving us an 
+error. Once we figured that our we could usually fix it somewhat quickly. We had to do this a few times 
+to make sure that the methods covered every scenario that we could think of for adding in information 
+to the BTree. The GeneBankCreateBTree took some time as well with taking in different arguments and 
+figuring out how to read in the GBK file. We tested the different cache sized to compare their speeds. 
+When using a cache size of 500, it runs 6.4% slower than a cache size of 100. The layout of the BTree 
+file on disk is in order of arrival.
+ 
+
+----------------------------------------------------------------------------

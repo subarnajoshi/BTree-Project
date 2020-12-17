@@ -1,0 +1,140 @@
+BTreeNode
+  - empty_node_addObject :			 Expects isEmpty to return false, means addObject worked
+	shows addObject is working
+  - emptyNode_isEmpty :				 Expects isEmpty to return true, tests is isEmpty works ok
+	shows that isEmpty is working
+  - full_node_addObject :			 Expects addObject() to return the middle index
+	shows addObject is working
+  - empty_node_removeObject :			 Expects a NoSuchElementException
+	shows that removeObject is working
+  - oneObject_removeObject :		 	 Expects isEmpty to return true
+	shows that removeObject is working	
+  - oneObject_removeObject2 :			 Expects removeObject to return obj it removed
+	shows that removeObject is working
+  - noParent_getParent :		 	 Expects getParent to return null
+	shows that getParent is working
+  - noChildren_getChild0 :			 Expects getChild(0) to return null
+	shows that getChild is working
+  - parent_getParent :				 Expects getParent to return parent node
+	shows that getChild is working
+  - singleChild_getChild0 : 			 Expects getChild(0) to return Children[0]
+	shows that getChild is working
+  - singleObject_getObject0 : 			 Expects getObject(0) to return objects[0]
+	shows that getObject is working
+  - noObject_getObject : 			 Expects getObject to return null
+	shows that getObject is working
+  - incorrectBounds_getObject :			 Expects IndexOutOfBoundsException
+	shows that getObject is working
+  - noChildren_isLeaf :				 Expects isLeaf() to return true
+	shows that isLeaf is working
+  - hasChildren_isLeaf :			 Expects isLeaf() to return false
+	shows that isLeaf is working
+  - noChildren_getHeight :			 Expects getHeight() to return 0
+	shows that getHeight is working
+  - hasChildren_getHeight :			 Expects getHeight() to return 1
+	shows that getHeight is working
+  - hasGrandchildren_getHeight :		 Expects getHeight() to return 2
+	shows that getHeight is working
+  - hasMultipleChildren_getHeight :		 Expects getHeight() to return 1
+	shows that getHeight is working
+  - noObjects_getSize :				 Expects getSize to return 0
+	shows that getSize is working
+  - addObject_getSize :				 Expects getSize to return 1
+	shows that getSize is working
+  - addObject_removeObj_getSize :		 Expects getSize to return 0
+	shows that removeObject and getSize are working
+  - emptyNode_addObject :			 Expects addObject to return -1
+	shows that addObject is working
+  - fullNode_addObject_getSize :	 	 Expects getSize to return 3
+	shows that addObject and getSize are working
+  - sloppyNode_mergeSort :			 Expects a sorted array based on key
+	shows that sorting is working
+  - notFullNode_isFull :			 Expects isFull to return false
+	shows that isFull is working
+  - fullNode_isFull :				 Expects isFull to return true
+	shows that isFull is working
+  - addSameObjTwice :				 Expects the obj's frequency to increase, and size to equal 1
+	shows that frequency increases among double insert
+  - objAt0_contains :				 Expects containsTreeObject to return 0
+	shows that containsTreeObject is working
+  - objAt2_contains :				 Expects containsTreeObject to return 2
+	shows that containsTreeObject is working
+  - noObj_contains :				 Expects containsTreeObject to return -1
+	shows that containsTreeObject is working
+  
+BTree
+  - emptyTree_isEmpty :				 Expects isEmpty to return true
+	shows that isEmpty is working
+  - emptyTree_size :				 Expects size() to return 0
+	shows that size is working
+  - emptyTree_height :				 Expects height(root) to return 0
+	shows that height is working
+  - setRoot :					 Expects tree.getRoot to equal new root set
+	shows that setRoot is working
+  - emptyTree_insert :				 Expects root.getObject(0) to equal object inserted
+	shows that insert is working
+  - emptyTree_insertMultipleTimes :		 Expects all objects to be inserted
+	shows that insert is working and sorting the nodes
+  - emptyTree_insertMultipleTimesOutOfOrder :	 Expects all objects to be inserted and in order
+	shows that insert is working and sorting the nodes
+  - itemInRoot_search :				 Expects search to return obj searching for
+	shows that search is working
+  - itemNotFound_search :			 Expects a NoSuchElementException
+	shows that search is working
+  - emptyTree_insertSameObjTwice :		 Expects size to be 1 and obj's frequency to be 1
+	shows that insert is working, by increasing the frequency
+  - fullRoot_in0thChild_search :		 Expects search to return obj it's searching for
+	shows that search is working
+  - fullRoot_empty0thChild_in1stChild_search :	 Expects search to return obj it's searching for
+	shows that search is working
+  - fullRoot_no0thChild_in1stChild_search :	 Expects search to return obj it's searching for
+	shows that search is working
+  - fullRoot_only3rdChild_in3rdChild_search :	 Expects search to return obj it's searching for
+	shows that search is working
+  - fullRoot_hasChildren_failSearch :		 Expects a NoSuchElementException
+	shows that search is working
+  - fullRoot_objInGrandchild_search :		 Expects search to return obj it's searching for
+	shows that search is working
+  - emptyRoot_insert :				 Expects objects[0] = object inserted
+	shows insert is working
+  - emptyRoot_insertToFull :			 Expects array of objects to equal: obj,obj1,obj2
+	shows insert is working
+  - emptyRoot_insertOutOfOrderToFull :		 Expects array of objects to equal: obj,obj1,obj2
+	shows insert is working and sorting
+  - fullRoot_insert :				 Expects a split to be made
+	shows insert is working and splitting
+  - emptyRoot_insert_sameObjTwice :		 Expects object's frequency to increase
+	shows insert is working and increasing frequency
+  
+GeneBankCreateBTree
+  - testIsInt :					 Expects isInt to return true
+	shows that isInt works for translating binary to gene
+  - testIsInt_fail :				 Expects isInt to return false
+	shows that isInt works for translating binary to gene
+  - generateKey_a :				 Expects generateKey to return "00"
+	shows that genome data can be translated into binary
+  - generateKey_t :				 Expects generateKey to return "11"
+	shows that genome data can be translated into binary
+  - generateKey_c :				 Expects generateKey to return "01"
+	shows that genome data can be translated into binary
+  - generateKey_g :				 Expects generateKey to return "10"
+	shows that genome data can be translated into binary
+  - generateKey_at :				 Expects generateKey to return "0011"
+	shows that genome data can be translated into binary
+  - generateKey_gatcctccat :			 Expects generateKey to return "10001101011101010011"
+	shows that genome data can be translated into binary
+  - generateKey_gatc :				 Expects generateKey to return "10001101"
+	shows that genome data can be translated into binary
+
+GeneBankSearch
+  - test_keyToGenomeString_00 :			 Expects keyToGenomeString to return "a"
+	shows that binary data can be translated into genome strings for printing frequency
+  - test_keyToGenomeString_11 :			 Expects keyToGenomeString to return "t"
+	shows that binary data can be translated into genome strings for printing frequency
+  - test_keyToGenomeString_01 :			 Expects keyToGenomeString to return "c"
+	shows that binary data can be translated into genome strings for printing frequency
+  - test_keyToGenomeString_10 :			 Expects keyToGenomeString to return "g"
+	shows that binary data can be translated into genome strings for printing frequency
+  - test_keyToGenomeString_10000111 :		 Expects keyToGenomeString to return "gact"
+	shows that binary data can be translated into genome strings for printing frequency
+
